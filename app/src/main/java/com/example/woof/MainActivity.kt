@@ -44,6 +44,10 @@ import com.example.woof.ui.theme.WoofTheme
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -114,7 +118,9 @@ fun DogIcon(
     Image(
         modifier = modifier
             .size(dimensionResource(R.dimen.image_size))
-            .padding(dimensionResource(R.dimen.padding_small)),
+            .padding(dimensionResource(R.dimen.padding_small))
+            .clip(MaterialTheme.shapes.small),
+        contentScale = ContentScale.Crop,
         painter = painterResource(dogIcon),
 
         // Content Description is not needed here - image is decorative, and setting a null content
