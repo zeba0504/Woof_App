@@ -42,7 +42,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-
+import androidx.compose.foundation.layout.Spacer
 
 
 class MainActivity : ComponentActivity() {
@@ -103,6 +103,7 @@ fun DogItem(
         ) {
             DogIcon(dog.imageResourceId)
             DogInformation(dog.name, dog.age)
+            Spacer(modifier = Modifier.weight(1f))
             DogItemButton(
                 expanded = expanded,
                 onClick = { /*TODO*/ }
