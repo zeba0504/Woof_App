@@ -96,6 +96,7 @@ fun DogItem(
 ) {
     var expanded by remember { mutableStateOf(false) }
     Card(modifier = modifier) {
+        Column(){
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -107,6 +108,16 @@ fun DogItem(
             DogItemButton(
                 expanded = expanded,
                 onClick = { /*TODO*/ }
+            )
+        }
+            DogHobby(
+                dog.hobbies,
+                modifier = Modifier.padding(
+                    start = dimensionResource(R.dimen.padding_medium),
+                    top = dimensionResource(R.dimen.padding_small),
+                    end = dimensionResource(R.dimen.padding_medium),
+                    bottom = dimensionResource(R.dimen.padding_medium)
+                )
             )
         }
     }
